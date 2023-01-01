@@ -3,7 +3,7 @@ WORKDIR /myflix_video
 COPY myflix_video/package.json ./
 RUN npm install 
 COPY /myflix_video ./
-RUN npm run build
+RUN npm run dev
 
 FROM nginx:1.19.0
 WORKDIR /usr/share/nginx/html

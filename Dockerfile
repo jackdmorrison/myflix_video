@@ -3,7 +3,6 @@ WORKDIR /myflix_video
 COPY myflix_video/package.json ./
 RUN npm install 
 COPY /myflix_video ./
-RUN chmod +x ./node_modules/.bin/react-scripts
 RUN npm run dev
 
 FROM nginx:1.19.0

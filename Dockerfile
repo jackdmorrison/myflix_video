@@ -2,9 +2,10 @@ FROM node:17-alpine AS builder
 WORKDIR /myflix_video
 COPY myflix_video/package.json ./
 RUN npm install 
+RUN npm install -g nodemon
 COPY /myflix_video ./
 RUN chmod +x ./node_modules/.bin/nodemon
-RUN npm run dev
+CMD ["npm", "run", "dev"]
 
 FROM nginx:1.19.0
 WORKDIR /usr/share/nginx/html
